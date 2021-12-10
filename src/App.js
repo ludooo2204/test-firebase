@@ -1,6 +1,11 @@
+import React from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+// Import FirebaseAuth and firebase.
+import SignInScreen from './components/SignIn'
 
+<<<<<<< HEAD
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword} from "firebase/auth";
 
@@ -62,21 +67,13 @@ signInWithPopup(auth, provider)
   });
 
 
+=======
+
+>>>>>>> aa85e0b596d9b38b3057d56c79239e43d4d7840a
 function App() {
-  const liste=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","w","y","z"]
-  console.log( app)
-  const roulette=()=>{
-    return liste[Math.ceil(Math.random()*26)-1]
-  }
- 
-    return (
-    <div style={{fontSize:90,display:"flex",justifyContent:'center',alignItems:'center'}}>
-    <br/>
-    <br/>
-    <br/>
- {roulette().toUpperCase()}
-    </div>
+  return (
+  <SignInScreen />
   );
 }
 
-export default App;
+export default App
