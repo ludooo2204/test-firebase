@@ -6,7 +6,8 @@ import "firebase/compat/auth";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
-
+import { Carousel } from "react-responsive-carousel";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 const config = {
 	apiKey: "AIzaSyA7Op3GsZJePjR6msXDwwn0X6uNqEQQk9c",
 	authDomain: "testfirebase-20be9.firebaseapp.com",
@@ -34,6 +35,7 @@ const uiConfig = {
 function SignInScreen() {
 	const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
 	const [bdd, setBdd] = useState(null); // Local signed-in state.
+	let photos = [];
 	useEffect(() => {
 		getDocs(collection(db, "utilisateurs"))
 			.then((doc) => {
@@ -43,9 +45,15 @@ function SignInScreen() {
 				// 	console.log(docs.data());
 				// });
 				const bddTemp = doc.docs.map((e) => e.data());
-				console.log(bddTemp);
 				console.log("bddTemp");
+				console.log(bddTemp);
 				setBdd(doc.docs.map((e) => e.data()));
+
+				bddTemp.forEach((element) => {
+					photos.push(element.img);
+				});
+				console.log("photos");
+				console.log(photos);
 			})
 			.catch((err) => {
 				console.log("err", err);
@@ -81,13 +89,24 @@ function SignInScreen() {
 		<div>
 			<h1>My App</h1>
 			{/* <img width={"250px"} src={"image/2.jpg"} /> */}
-{console.log(bdd)}
+
+			{bdd && (
+				<div style={{ background: "#19191920",width:"30%",margin:"0 auto", display: "flex",justifyContent:"center",alignItems:"center" }}><Carousel   useKeyboardArrows={true} emulateTouch={true}>
+					{bdd.map((user, index) => (
+						// <div >
+							<img  src={`image/${user.img}`} key={index} alt={"title"} />
+						// </div>
+					))}
+					{/* //     <img src={url} key={index} alt={title} /> */}
+				</Carousel></div>
+			)}
+			{/* {console.log(bdd)}
 			{bdd &&
 				bdd.map(user => {return 	<div><h3>
                         {user.first}</h3>
                         <img width={"250px"} src={`image/${user.img}`} />
                         </div>
-				})}
+				})} */}
 			{firebase.auth().currentUser.email == "vachon.ludovic@gmail.com" && <h1>Salut l'admin</h1>}
 			<p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
 			<button onClick={() => firebase.auth().signOut()}>Sign-out</button>
