@@ -6,8 +6,7 @@ import "firebase/compat/auth";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
-import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const config = {
 	apiKey: "AIzaSyA7Op3GsZJePjR6msXDwwn0X6uNqEQQk9c",
 	authDomain: "testfirebase-20be9.firebaseapp.com",
@@ -73,9 +72,7 @@ function SignInScreen() {
 		return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
 	}, []);
 
-	const Card = (user) => {
-		return <></>;
-	};
+	
 	if (!isSignedIn) {
 		return (
 			<div>
@@ -90,16 +87,7 @@ function SignInScreen() {
 			<h1>My App</h1>
 			{/* <img width={"250px"} src={"image/2.jpg"} /> */}
 
-			{bdd && (
-				<div style={{ background: "#19191920",width:"30%",margin:"0 auto", display: "flex",justifyContent:"center",alignItems:"center" }}><Carousel   useKeyboardArrows={true} emulateTouch={true}>
-					{bdd.map((user, index) => (
-						// <div >
-							<img  src={`image/${user.img}`} key={index} alt={"title"} />
-						// </div>
-					))}
-					{/* //     <img src={url} key={index} alt={title} /> */}
-				</Carousel></div>
-			)}
+		
 			{/* {console.log(bdd)}
 			{bdd &&
 				bdd.map(user => {return 	<div><h3>
