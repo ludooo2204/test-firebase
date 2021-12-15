@@ -4,10 +4,10 @@ import Main from './Main'
 const Home = () => {
     
     return (
-        <div>
+        <>
             <Navbar />
             <Main />
-        </div>
+        </>
     )
 }
 

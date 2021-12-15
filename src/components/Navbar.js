@@ -19,7 +19,8 @@ export default Navbar;
 const styles = {
 	navbar: {
 		backgroundColor: "#F0C8A3",
-		height: "50px",
+		height: "5VH",
+		minHeight: "5VH",
 		display: "flex",
 		flexDirection: "row",
 		justifyContent: "center",
