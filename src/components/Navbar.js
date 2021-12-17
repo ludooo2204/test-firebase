@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-const liens = ["Mes Créations", "Qui suis-je ?", "Contactez-moi"];
+const liens = ["Mes Créations", "Qui suis-je ?", "Contactez-moi","Evenements"];
 
 const Navbar = () => {
 	return (
@@ -28,6 +28,9 @@ const styles = {
 	ol: {
 		display: "flex",
 		width: "50%",
+		height: '100%',
+		margin: '0',
+		padding: '0',
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
@@ -38,6 +41,6 @@ const styles = {
 		color: "#684529",
 		fontFamily: "Pacifico",
 		textDecoration: "none",
-		fontSize: 30,
+		fontSize: "1.2 REM",
 	},
 };
