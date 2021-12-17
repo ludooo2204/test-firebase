@@ -3,7 +3,7 @@
   font-size: 50;
 }
 *{
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .App-logo {
   height: 40vmin;
