@@ -1,16 +1,38 @@
 import React from "react";
+
+import { Routes, Route,Outlet,Link } from "react-router-dom";
+
 import "../index.css";
-const liens = ["Mes Créations", "Qui suis-je ?", "Contactez-moi","Evenements"];
+const liens = ["Mes Créations", "Qui suis-je ?", "Contactez-moi","Evénements"];
+const routes = ["/Creations", "/QuiSuisJe", "/Contact","/Evenements"];
 
 const Navbar = () => {
 	return (
+		<>
 		<nav style={styles.navbar}>
 			<ol style={styles.ol}>
-				{liens.map((text) => (
-					<li style={styles.text}>{text}</li>
-				))}
+				<li>
+					<Link to="/" style={styles.text}>Accueil</Link>
+				</li>
+				<li>
+					<Link to="/Creations" style={styles.text}>Mes Créations</Link>
+				</li>
+				<li>
+					<Link to="/QuiSuisJe" style={styles.text}>Qui suis-je ?</Link>
+				</li>
+				<li>
+					<Link to="/Contact" style={styles.text}>Contactez-moi</Link>
+				</li>
+				<li>
+					<Link to="/Evenements" style={styles.text}>Evénements</Link>
+				</li>
+				
+				
 			</ol>
 		</nav>
+		<Outlet />
+		</>
+
 	);
 };
 

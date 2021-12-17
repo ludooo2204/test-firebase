@@ -20,22 +20,17 @@ const Main = () => {
 		gsap.from(titleRef.current, { opacity: 0,duration:4	 });
 		gsap.from(ciseau1Ref.current, { rotation: "+=27",duration:0.4,repeat:-1, yoyo:true	 });
 		gsap.from(ciseau2Ref.current, { rotation: "-=27",duration:0.4,repeat:-1, yoyo:true	 });
-		gsap.to(ciseauRef.current, { translateY: "-=120VH",duration:90,repeat:-1 });
+		gsap.to(ciseauRef.current, { translateY: "-=120VH",translateX: "+=120VH",duration:90,repeat:-1 });
 		// gsap.to(ciseau2Ref.current, { translateY: "-500",duration:5,repeat:-1	 });
 	});
-	const chuterBobine =()=>{
-		  gsap.fromTo(bobineRef.current,{ translateY: "0VH",x:`${Math.random()*90}VW`}, { translateY: "+120VH",duration:2  , ease: "power1.in"});
-console.log(bobineRef.current.y)
-bobineRef.current.Y=0
-	  }
+
 	return (
 		// <div className={styles.tout}>
-		<main onClick={chuterBobine} className={styles.main}>
+		<main className={styles.main}>
 			<div ref={fleurLeftRef} className={styles.fleurLeftcontainer}>
 				<div className={styles.fleurLeft}></div>
 			</div>
 			<div ref={titleRef}  className={styles.titre}>
-				<img ref={bobineRef} className={styles.bobine} src={bobineFil} />
 
 			<div ref={ciseauRef} className={styles.ciseaux}>
 				<img ref={ciseau1Ref} className={styles.ciseau1} src={ciseau1} />

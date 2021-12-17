@@ -1,19 +1,35 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import image1 from "../image/1.jpg";
+import image2 from "../image/2.jpg";
+import image3 from "../image/3.jpg";
+import image4 from "../image/4.jpg";
 
 const Card = () => {
+	let settings = { dots: true };
 	return (
-			<div style={{ background: "#19191920", width: "30%", margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}>
-				<Carousel useKeyboardArrows={true} emulateTouch={true}>
-					<img src={`image/1.jpg`}  alt={"title"} />
-					<img src={`image/2.jpg`}  alt={"title"} />
-					<img src={`image/3.jpg`}  alt={"title"} />
-					<img src={`image/4.jpg`}  alt={"title"} />
-					<img src={`image/5.jpg`}  alt={"title"} />
-					
-				</Carousel>
-			</div>
+		<div style={{ padding:40,background:"blue" }}>
+			{/* <img src={image1} /> */}
+			
+
+			<Slider {...settings}>
+				<div>
+					<img src={image1} />
+				</div>
+				<div>
+					<img src={image2} />
+				</div>
+				<div>
+					<img src={image3} />
+				</div>
+				<div>
+					<img src={image4} />
+				</div>
+			</Slider>
+			<img src={image2} />
+		</div>
 	);
 };
 

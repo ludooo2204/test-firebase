@@ -77,13 +77,8 @@ height:  80%;
 	height:8%;
 	position: absolute;
 	top: 110%;
-	left: 70%;
-	transform: rotate(-90deg);
+	left: 60%;
+	transform: rotate(-45deg);
+	z-index: 3;
 }
-.bobine{
-    position: absolute;
-    width: 5%;
-    height: 8%;
-    top: -10%;
-    z-index: -2;
-}
+
