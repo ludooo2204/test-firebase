@@ -72,14 +72,17 @@
 }
 .ciseaux {
 	/* background-color: aqua; */
-	width: 8%;
+	width: 3VW;
+	height: 3VW;
+	/* width: 8%;
+	height: 8%; */
 	padding: 1%;
-	height: 8%;
 	position: absolute;
-	top: 110%;
-	left: 60%;
-	transform: rotate(-45deg);
-	z-index: 3;
+	top: 75%;
+	left: 70%;
+	transform: rotate(-155deg);
+	/* z-index: 3; */
+	/* z-index: 3; */
 }
 .cardImage {
 	width: 100%;
@@ -105,6 +108,22 @@
 
 	outline: none;
 }
+.cardContainerModal {
+	/* margin: 5%;
+	padding-right:  5%; */
+	height: 90vh;
+	width: 60VW;
+	/* background-color: #f0c8a310; */
+	transition: all 0.4s;
+	position: relative;
+	outline: none;
+}
+.cardImageModal {
+	transition: all 0.4s;
+	max-width: 100%;
+	max-height: 100%;
+	height: inherit !important;
+}
 .cardContainer:hover {
 	/* padding-bottom: 15%; */
 	/* transform: scale(1.1); */
@@ -122,35 +141,32 @@
 	border-radius: 10%;
 	outline: none;
 }
+.divCardContainerModal {
+	height: 90vh !important;
+	/* transform: scale(1.2); */
+	outline: none;
+	display: flex !important;
+	justify-content: center;
+	text-align: center;
+}
 .legende {
 	position: relative;
-	/* background-color: #d37b29; */
-	/* background-color: #88f5b7;
- */
-	/* background: linear-gradient(34deg, rgba(240,200,163,1) 0%, rgba(240,200,163,1) 71%, rgba(92,181,111,1) 100%); */
-	/* background-color: #f0c8a3; */
 	background: linear-gradient(180deg, rgba(240, 200, 163, 1) 0%, rgb(243, 238, 234) 70%, rgb(243, 238, 234) 100%);
 	text-align: center;
-	/* width: 100%; */
 	height: 250px;
-	/* margin-bottom: 1.6vw; */
-	/* padding-top: -0.5vw; */
-	/* margin-top: -15px; */
 	border-radius: 10%;
 	overflow: visible;
-
-	/* top: 20px; */
-	/* bottom: -0.1VW; */
-
-	/* transform: translateY(-5%); */
+	/* transform: translateY(-10%); */
 	transition: 0.2s ease-in-out;
-	/* overflow: hidden; */
-	/* z-index: -1; */
-	/* max-height: 10px; */
+	color: "#684529",
+
 }
 .legende:hover {
-	transform: translateY(-30%);
+	transform: translateY(-40%);
+	padding-left: 10%;
+	padding-right: 10%;
 	border-radius: 5%;
+	z-index: 3;
 }
 .thumbnail {
 	margin: 5%;
@@ -164,27 +180,48 @@
 }
 .priceTag {
 	position: relative;
-	top: -1REM;
-	left: 1REM;
-	width: 2rem;
+	top: -1.5VW;
+	left: 1VW;
+	width: 2VW;
 	text-align: center;
-	height: 2rem;
-	background-color: azure;
+	height: 2VW;
+	background-color: #EAF9D9;
 	border-radius: 50%;
 	z-index: 2;
-	line-height: 2rem;
+	line-height: 2VW;
+	font-weight: 500;
+	font-size: 1VW;
 	transition: all 0.4s;
-	border: 2px solid;
+		color: #684529;
+		border: 2px solid  ;
 
 }
 .legende:hover .priceTag {
-	background-color: yellow;
-	transform: translateX(10REM);
+	background-color: #DEBAD5;
+	transform: translateX(9rem) scale(1.2);
+	border-color: #A64E8F ;
+
 }
 .legende:hover .title {
 	margin-bottom: 0px;
 }
-.title{
+.title {
 	margin-top: 0;
 	margin-bottom: 1000px;
+	font-size: 1.5vw;
+	color: #684529;
+
+}
+.closeButton{
+	border-radius: 50%;
+	background-color: crimson;
+	color: aliceblue;
+	font-weight: 900;
+	/* padding: 5px; */
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
 }

@@ -63,6 +63,7 @@ const styles = {
 		color: "#684529",
 		fontFamily: "Pacifico",
 		textDecoration: "none",
-		fontSize: "1.2 REM",
+		fontSize: "1.2VW",
+		
 	},
 };

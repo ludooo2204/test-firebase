@@ -20,7 +20,8 @@ const Main = () => {
 		gsap.from(titleRef.current, { opacity: 0,duration:4	 });
 		gsap.from(ciseau1Ref.current, { rotation: "+=27",duration:0.4,repeat:-1, yoyo:true	 });
 		gsap.from(ciseau2Ref.current, { rotation: "-=27",duration:0.4,repeat:-1, yoyo:true	 });
-		gsap.to(ciseauRef.current, { translateY: "-=120VH",translateX: "+=120VH",duration:90,repeat:-1 });
+		gsap.from(ciseauRef.current, {opacity:0,duration:40,repeat:-1, 	 });
+		// gsap.to(ciseauRef.current, { translateY: "-=80VH",translateX: "-=80VW",duration:90,repeat:-1 });
 		// gsap.to(ciseau2Ref.current, { translateY: "-500",duration:5,repeat:-1	 });
 	});
 
@@ -32,11 +33,11 @@ const Main = () => {
 			</div>
 			<div ref={titleRef}  className={styles.titre}>
 
-			<div ref={ciseauRef} className={styles.ciseaux}>
+			{/* <div ref={ciseauRef} className={styles.ciseaux}>
 				<img ref={ciseau1Ref} className={styles.ciseau1} src={ciseau1} />
 				<img ref={ciseau2Ref} className={styles.ciseau2} src={ciseau2} />
-				</div>
-			</div>
+				</div> */}
+			</div> 
 			<div ref={fleurRightRef} className={styles.fleurRightcontainer}>
 				<div className={styles.fleurRight}></div>
 			</div>
